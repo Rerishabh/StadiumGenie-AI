@@ -17,3 +17,5 @@ yarn-error.log*
 # OS
 Thumbs.db
 Desktop.inigraphify-out/
+
+graphify-out/
