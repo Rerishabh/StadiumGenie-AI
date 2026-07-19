@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  title: StadiumGenie-AI API
+  version: 1.0.0
+servers:
+  - url: /api/v1
+paths:
+  /auth/register:
+    post:
+      summary: Register user
+      requestBody:
+        required: true
+      responses:
+        '201':
+          description: User registered
+  /auth/login:
+    post:
+      summary: Login
+      requestBody:
+        required: true
+      responses:
+        '200':
+          description: Logged in
+  /stadiums:
+    get:
+      summary: List stadiums
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Create stadium (admin)
+      security:
+        - bearerAuth: []
+      responses:
+        '201':
+          description: Created
+  /events:
+    get:
+      summary: List events
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Create event (admin)
+      security:
+        - bearerAuth: []
+      responses:
+        '201':
+          description: Created
+  /bookings:
+    post:
+      summary: Create booking
+      security:
+        - bearerAuth: []
+  /payments:
+    post:
+      summary: Create payment
+      security:
+        - bearerAuth: []
+  /tickets:
+    get:
+      summary: List tickets
+      security:
+        - bearerAuth: []
+  /admin/dashboard:
+    get:
+      summary: Admin dashboard
+      security:
+        - bearerAuth: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

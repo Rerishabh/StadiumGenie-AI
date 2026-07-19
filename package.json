@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "qrcode": "^1.5.4",
+    "swagger-ui-express": "^5.0.1",
+    "yamljs": "^0.3.0"
+  }
+}
